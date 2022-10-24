@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSS LINKING-->
+    <link rel="stylesheet" href="./css/styles.css"/>
+
+    <!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+
+	<!--LINKING FONT AWESOME-->
+	<script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+
+
+	<!--Javascript linking-->
+    <script src="./js/index.js" ></script>
+
+    
+<style type="text/css">
+
+body{
+	background:black; 	
+	height: 100%;
+	
+	
+}
+nav {
+	background-color: none;
+	 position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1;
+}
+nav h2{color: white;}
+
+
+.landing-cover{
+	height: 120vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("./images/pizza_landing.jpg");
+		background-position: center;
+  		background-repeat: no-repeat;
+  		background-size: cover;
+}
+.center{
+		position: absolute;
+		left: 40%;
+    	top: 60%;
+    	width: 80%;
+    	padding-left: 20px;
+    	color: white;
+    	transform: translate(-50%, -50%);	
+    	line-height: 3rem;
+}
+.center h1{
+	font-size: 5rem;
+	font-weight: bold;
+	letter-spacing: 10px;
+	color: white;
+	margin-bottom: -30px;
+	
+}
+.center p{font-size: 40px;}
+
+.menu-btn{
+	color: white;
+	letter-spacing: 2px;
+	border:2px solid var(--aqua-dark);
+	background:transparent;
+	width: 10rem;
+	height: 3rem;
+	padding: 5px;
+	border-radius: 10px;
+	
+}
+.menu-btn:hover{
+	background-color: var(--aqua-light);
+	color: white;
+
+}
+.menu-section{
+	padding: 30px;
+}
+.menu-section h1{
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+}
+.tabs{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap:10px;
+	width: 25rem;
+	padding: 20px;
+	
+
+}
+.tabs span{
+	color: var(--offset-gray);
+	font-size: 25px;
+}
+.tabs button{
+	color: var(--offset-gray);
+	background:transparent;
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+
+}
+.tabs button:hover{
+	border: 2px solid var(--aqua-dark);
+	border-radius: 20px;
+
+}
+.tabs button.active {
+	border:none;
+  	background-color: var(--aqua-dark);
+  	border-radius: 20px;
+  	color: white
+}
+
+.tabcontent{
+	display: block;
+	margin:0 auto;
+	width: 90%;
+	margin-top: 50px;
+}
+
+.tabcontent .category-line{
+	width: 15%;
+	border:1px solid var(--aqua-dark) ;
+	background:var(--aqua-dark);
+	margin-top: -15px;
+	border-radius: 20px;
+}
+.menu-item-header{
+	color: white;
+	font-size: 30px;
+	
+}
+
+.uk-card{
+	background-color: var(--card-gray);
+	border-radius: 5px;
+	width: 20rem;
+
+}
+.uk-card-media-top img{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.card-body .info{
+	text-align: center;
+	padding: 10px;
+} 
+
+.item-name{
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 5px;
+	font-size: 20px;
+	margin-bottom: -15px;
+}
+
+.item-price{
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.price-area{
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap:10px;
+	padding: 0 20px 0 20px;	
+}
+
+hr{
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.add-btn{
+	background:transparent;
+	border:2px solid var(--aqua-dark);
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	color: var(--aqua-dark);
+	transition: 0.2s ease-in-out;
+}
+
+.add-btn:hover{
+	color: white;
+	background-color: var(--aqua-light);
+}
+
+
+</style>
+
+</head>
+<body> 
+	<!-- <img src="./images/pizza_landing.jpg" width="1800" alt="">-->
+	<div class="landing-cover ">
+		<nav>
+			<a href="#"><h2>BC FOODS</h2></a>
+			<div class="icons">
+				<i class="fa-solid fa-user" type="button"></i>
+				<div class="dropdown" uk-dropdown ">
+					<p>John Oliver</p>
+					<hr>
+					<!--Logout user and go to sign in page when clicked-->
+					<a class="logout" href="./sign-up-pages/sign-in.html">Logout</a>
+				</div>
+				<!--badge to show how many items are in cart ready for checkout-->
+				<!--When user adds item to cart it will show up-->
+				<a href="#"><i class="fa-solid fa-cart-shopping"><span class="uk-badge">0</span></i></a>	
+			</div>
+
+		</nav>
+		<div class="center">
+			<h1>BC FOODS</h1>
+			<p>Celebrate everything, with a <span>MEMORABLE</span> dining experience!</p>
+			<a href="#menu"><button class="menu-btn">MENU</button></a>
+		</div>
+	</div>
+
+	<main>
+		<section class="menu-section" id="menu">
+			<h1 >Pick and place your <span style="color: var(--aqua-dark);">order!</span></h1>
+			<div class="tabs">
+				<button class="tablinks active" onclick="openitem(event, 'Pizza')">Pizza</button>
+				<span>|</span>
+	  			<button class="tablinks" onclick="openitem(event, 'Burgers')">Burgers</button>
+	  			<span>|</span>
+	  			<button class="tablinks" onclick="openitem(event, 'Meat')">Steak</button>
+			</div>
+
+			<!--TAB MENU ITEMS TO BE DISPLAYED WHEN A MENU TAB IS CLICKED-->
+			<div id="Pizza" class="tabcontent uk-animation-slide-bottom-small">
+				<p class="menu-item-header">PIZZA <hr class="category-line"></p>
+				<div class="uk-grid-match uk-child-width-expand@s uk-grid-small  uk-animation-scale-up uk-transform-origin-top-left" uk-grid>
+					<div>
+				        <div class="uk-card uk-card-default ">
+				            <div class="uk-card-media-top">
+				                <img src="./images/pizza_landing.jpg" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Double cheese classic</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$20.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				                
+				            </div>
+				        </div>
+			    	</div>
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/pizza_landing.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Tripple decker suprise</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$35.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+
+				                
+				            </div>
+				        </div>
+			    	</div>
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/pizza_landing.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Feta cheese</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$20.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<div id="Burgers" class="tabcontent uk-animation-slide-bottom-small">
+				<p class="menu-item-header">BURGERS<hr class="category-line"></p>
+			  	<div class="uk-grid-match uk-child-width-expand@s uk-grid-small  uk-animation-scale-up uk-transform-origin-top-left" uk-grid>
+					<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/burger.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				           	<div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Cheese Hamburger</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$20.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/burger.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Big boy delux</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$30.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/burger.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Dunked chicken delux</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$15.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<div id="Meat" class="tabcontent uk-animation-slide-bottom-small">
+				<p class="menu-item-header">STEAK<hr class="category-line"></p>
+			  	<div class="uk-grid-match uk-child-width-expand@s uk-grid-small  uk-animation-scale-up uk-transform-origin-top-left" uk-grid>
+					<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/steak.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">500g sirloin</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$35.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			    	
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/steak.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Le soof noir </p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$28.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			    	<div>
+				        <div class="uk-card uk-card-default">
+				            <div class="uk-card-media-top">
+				                <img src="./images/steak.jpg" width="1800" height="1200" alt="item-image">
+				            </div>
+				            <div class="card-body">
+				            	<div class="info">
+				            		<div class="left">
+				            			<p class="item-name">Le prince le steak</p>
+				            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+				            			</p>
+				            			<div class="price-area">
+				            				<hr>
+				            				<p class="item-price">$40.00</p>
+				            				<hr>
+				            			</div>
+				            			
+				            		</div>
+				            		<div class="right">
+				            			<a href="./product-page/product.html"><button class="add-btn"  uk-tooltip="title: ADD TO CART; pos: right"><i class="fa-solid fa-plus"></i></button></a>
+				            		</div>
+				            	</div>
+				               
+				            </div>
+				        </div>
+			    	</div>
+			  	</div>
+			</div>
+		</section>
+	</main>
+	
+	<footer>
+		<p class="copyright-text">Copyright &copy; 2012 All Rights Reserved by<a href="#"> BC Foods</a></p>	
+	</footer>
+
+	
+	
+	
+<script>
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    	<!--CSS LINKING-->
+    	<link rel="stylesheet" href="../css/styles.css"/>
+
+    	 <!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+
+
+		<!--LINKING FONT AWESOME-->
+		<script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+
+
+	<!--Javascript linking-->
+    <script src="./js/index.js" ></script>
+
+        <title>Checkout</title>
+
+    <style type="text/css">
+	    body{
+	    	display: grid;
+	    	grid-template-columns: 1fr;
+	    	grid-template-rows: 0.1fr 2fr 0.1fr;
+	    	grid-template-areas: "nav" "main" "footer";
+	     	background-color: black;
+
+	    }
+
+	    nav{
+	     	background-color: var(--card-gray);
+	     	color: white;
+	     	grid-area: nav;
+	    }
+	    nav a{
+	    	text-decoration: none;
+	    }
+	    nav h2{
+	     	color: white;
+	    }
+	    footer{
+	    	grid-area: footer;
+	    	margin-top: 30px;
+
+
+	    }
+	    main{
+	    	grid-area: main;
+
+	    	
+	    }
+	    .section-header{
+	    	color: white;
+	    	padding-left: 20px;
+	    }
+
+		/*ordered items css*/
+		.ordered-items-section{
+			padding: 20px;
+		}
+		.items{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.quantity-btn{
+			background:transparent;
+			border:2px solid var(--aqua-dark);
+			padding: 2px;
+			width: 25px;
+			height: 25px;
+			border-radius: 50px;
+			color: var(--aqua-dark);
+			transition: 0.2s ease-in-out;
+			margin-right: 5px;
+			margin-left: 5px;
+			cursor: pointer;
+		}
+		.quantity-btn:hover{
+			color: white;
+			background-color: var(--aqua-light);
+
+		}
+		.item-name, .item-price, .item-quantity{
+			color: white;
+		}
+		.delete-item-btn{
+			cursor: pointer;
+
+		}
+		.delete-item-btn:hover{
+			color: red;
+		}
+
+		.total-area, .total-price{
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+		.total-area a{
+			color: var(--aqua-dark);
+			text-decoration: none;
+			transition: 0.2s ease-in-out;
+		}
+		.total-area a:hover{
+			color: var(--aqua-light);
+		}
+
+		.total-price p{
+			color: white;
+			margin-right: 10px;
+		}
+
+		/**CARD INFORMATION CSS**/
+		.card-details{
+			padding-right: 20px;
+		}
+		.credit-card{
+			width: 80%;
+			background: var(--card-gray);
+			border-radius: 10px;
+			padding: 20px;
+
+		}
+		.form-header {
+		    height: 60px;
+		    padding: 20px 30px 0;
+		    border-bottom: 1px solid #e1e8ee;
+		}
+		 
+		.form-body {
+		    height: 340px;
+		    padding: 30px 30px 20px;
+		}
+		label{
+			color: white;
+			font-weight: bold;
+			letter-spacing: 2px;
+			padding-bottom: 10px;
+		}
+		.title {
+		    margin: 0;
+		    color:white;
+		}
+		.card-number {
+		    width: 100%;
+		    height: 35px;
+		    font-size: 25px;
+		    margin-bottom: 20px;
+		    padding-left: 10px;
+		    border: none;
+		    border-radius: 6px;
+		    color: white;
+		    background-color: var(--offset-gray); 
+		}
+		.date-field{
+			display: flex;
+			align-items: baseline;
+			height: 50px;
+			
+
+		}
+		.month, .year{
+			position: relative;
+		}
+		select{
+		    width: 150px;
+		    height: 40px;
+		    margin-right: 10px;
+		    border-radius: 10px;
+		    border: none;
+		    text-transform: capitalize;
+		    color: #fff;
+		    background: var(--offset-gray);
+		    text-align: left;
+		    padding: 0 15px;
+		    font-size: 16px;
+		    cursor: pointer;
+
+		}
+		select:hover, .card-number:hover, .cvv-input input:hover{
+			border:1px solid var(--aqua-light);
+		}
+
+		.cvv-input input{
+			width: 100px;
+		    height: 40px;
+		    border-radius: 10px;
+		    border: none;
+		    text-transform: capitalize;
+		    color: #fff;
+		    background: var(--offset-gray);
+		    text-align: left;
+		    padding: 0 15px;
+		    font-size: 16px;
+		    cursor: pointer;
+
+		}
+
+		.payment-btn{
+			display: block;
+			margin: 40px auto;
+			width: 100%;
+			color: white;
+			background:var(--aqua-dark);
+			border:none;
+			padding: 10px;
+			letter-spacing: 1px;
+			border-radius: 5px;
+			transition: 0.2s ease-in-out;
+			cursor: pointer;
+
+		}
+		.payment-btn:hover{
+			background-color: var(--aqua-light);
+			font-weight: bold;
+		}
+		.payment-btn a{
+			color: white;
+			font-size: 20px;
+			letter-spacing: 2px;
+			text-decoration: none;
+		}
+		
+
+		
+
+		
+
+
+
+		
+
+		
+
+
+   	
+    </style>
+       
+    </head>
+ 	<body>
+ 		<nav>
+			<a href="../index.html"><h2>BC FOODS</h2></a>
+			<div class="icons">
+				<i class="fa-solid fa-user" type="button"></i>
+				<div class="dropdown" uk-dropdown>
+					<p>John Oliver</p>
+					<hr>
+					<!--Logout user and go to sign in page when clicked-->
+					<a class="logout" href="../sign-up-pages/sign-in.html">Logout</a>
+				</div>
+				<!--badge to show how many items are in cart ready for checkout-->
+				<!--When user adds item to cart it will show up-->
+				<a href="#"><i class="fa-solid fa-cart-shopping"><span class="uk-badge">0</span></i></a>	
+			</div>
+		</nav>
+		<main  class="uk-child-width-1-2@s uk-child-width-1-2@m" uk-grid>
+			<div class="cart-items" >
+				<h1 class="section-header">Cart</h1>
+				<div class="ordered-items-section">
+
+					<!--Ordered items list-->
+					<div class="items">
+						<img class="uk-border-rounded" src="../images/burger.jpg" width="150" height="20" alt="item-image" >
+						<p class="item-name uk-text-large">Big boy burger</p>
+						<div class="item-quantity uk-flex uk-flex-middle" >
+							<button id="minus" class="quantity-btn"><i class="fa-solid fa-minus"></i></button>
+							<p class="uk-text-large item-quantity">1</p>
+							<button id="add" class="quantity-btn"><i class="fa-solid fa-plus"></i></button>
+						</div>
+						<p class="item-price uk-text-large">$20.00</p>
+						<span class="delete-item-btn uk-text-large"><i class="fa-regular fa-trash-can"></i></span>
+					</div>
+					<hr><!--Devder for each item in ordered list-->
+
+					<!--TOTAL PRICE FOR ALL ITEMS IN CART-->
+					<div class="total-area">
+						<a href="../index.html" class="uk-text-large"> <i class="fa-solid fa-chevron-left"></i> Continue Shopping</a>
+						<div class="total-price uk-text-large">
+							<p>Total: </p>
+							<p>$20.00</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="card-details">
+				<h1 class="section-header">Payment Info</h1>
+					<form class="credit-card">
+					  <div class="form-header">
+					    <h4 class="title uk-text-large">Credit card detail</h4>
+					  </div>
+					 
+					  <div class="form-body">
+					    <!-- Card Number -->
+					    <label for="card-number">Card Number:</label>
+					    <input type="text" class="card-number" name="card-number">
+					 
+					    <!-- Date Field -->
+					    <label>Expiry date:</label>
+					    <div class="date-field">
+					      <div class="month">
+					        <select name="Month" required>
+					          <option value="january">January</option>
+					          <option value="february">February</option>
+					          <option value="march">March</option>
+					          <option value="april">April</option>
+					          <option value="may">May</option>
+					          <option value="june">June</option>
+					          <option value="july">July</option>
+					          <option value="august">August</option>
+					          <option value="september">September</option>
+					          <option value="october">October</option>
+					          <option value="november">November</option>
+					          <option value="december">December</option>
+					        </select>
+					      </div>
+					      <div class="year">
+					        <select name="Year" required>
+					          <option value="2016">2016</option>
+					          <option value="2017">2017</option>
+					          <option value="2018">2018</option>
+					          <option value="2019">2019</option>
+					          <option value="2020">2020</option>
+					          <option value="2021">2021</option>
+					          <option value="2022">2022</option>
+					          <option value="2023">2023</option>
+					          <option value="2024">2024</option>
+					        </select>
+					      </div>
+					    </div>
+					    <hr>
+					 
+					    <!-- Card Verification Field -->
+					    <label>CVV Number:</label>
+					    <div class="card-verification">
+					      <div class="cvv-input">
+					        <input type="text" required>
+					      </div>
+					      
+					    </div>
+					    
+					 
+					    <!-- Buttons -->
+					    <button type="submit" class="payment-btn"><a href="#">Make Payment</a></button>
+					  </div>
+					</form>
+
+
+				
+			</div>
+		</main>
+
+		<footer>
+		<p class="copyright-text">Copyright &copy; 2012 All Rights Reserved by<a href="#"> BC Foods</a></p>	
+		</footer>
+			
+
+      
+
+    </body>
+</html>

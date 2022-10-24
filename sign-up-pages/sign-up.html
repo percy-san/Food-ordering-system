@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-up</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS LINKING-->
+    <link rel="stylesheet" href="../css/styles.css"/>
+    
+    <!--linking bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!--FONT AWSOME LINK-->
+    <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+
+    <script src="../js/index.js"></script>
+
+ <!--CSS-->
+	<style type="text/css">
+	body{
+	background:var(--background-gray); 		
+}
+		
+		.sign-up-card{
+			position: absolute;
+			left: 50%;
+    		top: 55%;
+    		transform: translate(-50%, -50%);
+    		width: 25rem;
+    		height: 30rem;
+    		padding: 15px;
+
+    		border-radius: 10px;
+    		background: rgba( 0, 0, 0, .5 );
+			backdrop-filter: blur( 13.5px );
+            -webkit-backdrop-filter: blur( 3.5px );
+
+            -webkit-box-shadow: 0px 12px 9px 3px rgba(0,0,0,0.64); 
+			box-shadow: 0px 12px 9px 3px rgba(0,0,0,0.64);
+			color: white;		
+		}
+		.sign-up-card h4{
+			margin: 10px 0 30px 0;
+
+		}
+		.sign-up-card form{
+			
+			display: flex;
+			flex-direction: column;
+			gap:20px;
+		}
+		
+		input[type=email],input[type=password],input[type=text] {
+			border:none;
+			border-radius: 20px;
+			padding: 10px;
+			background-color: var(--offset-gray);
+			color: white;
+			transition: 0.2s ease-in-out;
+		}
+		input[type=email]:hover,input[type=password]:hover,.name-section input:hover{
+			border: 1px solid var(--aqua-light);
+
+		} 
+		.name-section{
+			display: flex;
+			align-items: center;
+			gap:10px;
+		}
+		.name-section input{
+			width:100%;
+
+
+		}
+
+		
+		input[type=submit]{
+			margin-top: 10px;	
+			border-radius: 20px;
+			border:none;
+			padding: 10px;
+			background-color: var(--aqua-dark);
+			color: white;
+			transition: 0.2s ease-in-out;
+		}
+		input[type=submit]:hover{
+			background-color: var(--aqua-light);
+		}
+		::placeholder{
+			color: #D3D4D4;
+		}
+		::-ms-input-placeholder{
+			color: #D3D4D4;
+		}
+		hr, .sign-in-text{
+			margin-top:1rem;
+		}
+		
+		.sign-in-text{
+			text-align: center;		
+		}
+		.sign-in-text a{
+			color: #00A4A4;
+			text-decoration: none;
+		}
+		.sign-in-text a:hover{
+			color: #00DBDB;
+		}
+
+ 	
+ 	</style>
+</head>
+
+<body>
+	<nav>
+		<h2>BC FOODS</h2>
+	</nav>
+	<div class="sign-up-container">
+		<div class="sign-up-card">
+			<h4>SIGN UP!</h4>
+			<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+				<input type="email" name="email" placeholder="Email Address" required>
+				<div class="name-section">
+					<input type="text" name="first name" placeholder="First Name" required>
+					<input type="text" name="last name" placeholder="Last Name" required>	
+				</div>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="password" name="password-check" placeholder="Re-enter password" required>
+
+
+				<input type="submit" name="sign-up" id="submit-btn" value="SIGN IN" >
+			</form>
+			
+			<hr>
+			<p class="sign-in-text">Already have an accuont?<span><a href="sign-in.html"> Sign in</a></span></p>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

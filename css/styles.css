@@ -1,0 +1,85 @@
+
+:root{
+	--background-gray:#363737;
+	--card-gray:#121212;
+	--offset-gray:#606262;
+	--aqua-dark:#00A4A4;
+	--aqua-light:#00DBDB;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+*,button{
+	font-family: 'Playfair Display', serif;
+}
+
+/**NAVBAR CSS**/
+nav{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding: 10px;
+	background: rgba( 0, 0, 0, .5 );
+	backdrop-filter: blur( 13.5px );
+          -webkit-backdrop-filter: blur( 3.5px );
+          -webkit-box-shadow: 0px 12px 9px 3px rgba(0,0,0,0.64); 
+	box-shadow: 0px 5px 5px 1px rgba(0,0,0,0.4);
+    color: white;
+
+}
+nav a{
+	text-decoration: none;
+}
+nav .icons i{
+	margin-right: 20px;
+	font-size: 25px;
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+	padding:5px;
+
+}
+nav .icons i:hover{
+	color: var(--aqua-light);
+}
+nav .icons a{
+	color: white;
+}
+.fa-cart-shopping{
+	position: relative;	
+}
+.fa-cart-shopping span{
+	position: absolute;
+	right:-5px;
+	top:-5px;
+	background-color: var(--aqua-light);
+}
+
+.dropdown p{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.dropdown .logout{
+	color: black;
+	text-decoration:none; 
+}
+.dropdown .logout:hover{
+	color: var(--aqua-light);
+}
+
+footer{
+
+	text-align: center;
+  	background-color:var(--card-gray);
+  	font-size:15px;
+  	padding: 10px;
+  	color:#737373;
+}
+.copyright-text a{
+	color: var(--aqua-dark);
+	text-decoration: none;
+	transition: 0.2s ease-in-out
+}
+.copyright-text a:hover{
+	color: var(--aqua-light);
+	text-decoration: none;
+}

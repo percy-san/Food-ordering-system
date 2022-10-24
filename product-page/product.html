@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    	<!--CSS LINKING-->
+    	<link rel="stylesheet" href="../css/styles.css"/>
+
+    	 <!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+
+
+		<!--LINKING FONT AWESOME-->
+		<script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+
+
+	<!--Javascript linking-->
+    <script src="./js/index.js" ></script>
+
+        <title>Product page</title>
+
+    <style type="text/css">
+	    body{
+	     	background-color: black;
+	     	height: 100%;
+	    }
+
+	    nav{
+	     	background-color: var(--card-gray);
+	     	color: white;
+	    }
+	    nav a{
+	    	text-decoration: none;
+	    }
+	    nav h2{
+	     	color: white;
+	    }
+	    .page-header-text{
+	    	color: white;
+	    	text-align: center;
+	    	margin-top: 25px;
+	    }
+	    .page-header-text span{
+	    	color: var(--aqua-dark);
+	    }
+
+	    .product-area{
+	    	display: block;
+	    	margin: 0 auto;
+	    	width: 80%;
+	    	padding-top:40px;
+	    }
+	    .uk-card{
+	    	background-color: black;
+	    	padding: 10px;
+	    	border-radius: 10px;
+	    	/*Glowing animation 
+	    	-webkit-animation: glowing 1s ease-in-out infinite alternate;
+            -moz-animation: glowing 1s ease-in-out infinite alternate;
+            animation: glowing 1s ease-in-out infinite alternate;
+            */
+	    }
+
+	    
+		
+		.uk-card-body h3, .uk-card-body{
+			color:white;
+		}
+		.uk-card-body h3{
+			font-weight: bold;
+			font-size: 30px;
+			letter-spacing: 1px;
+		}
+		.input-confirm-area{
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+			gap:20px;
+			flex-wrap: wrap;
+
+		}
+		.confirm-btn, .modal-btn{
+			color: white;
+			background:transparent;
+			border: 2px solid var(--aqua-dark);
+			padding: 10px;
+			letter-spacing: 1px;
+			border-radius: 5px;
+			transition: 0.2s ease-in-out;
+			cursor: pointer;
+		}
+		.confirm-btn:hover, .modal-btn:hover{
+			background-color: var(--aqua-light);
+			font-weight: bold;
+		}
+		.confirm-btn:active, .modal-btn:active{
+			background-color: var(--aqua-light);
+ 			transform: translateY(2px);
+
+		}
+		.quantity{
+			height:29px;
+			color: white;
+			background-color: transparent;
+			border: 2px solid var(--card-gray);
+		}
+		.quantity:focus{
+			border: 2px solid var(--aqua-light);
+		}
+		.input-confirm-area div{
+			color: var(--offset-gray);
+		}
+
+		.change-order{
+			margin-top: 1in;
+		}
+		.uk-modal-dialog {
+			background-color: var(--card-gray);
+
+		}
+		.uk-modal-title{
+			color: white;
+		}
+
+		.modal-btn-text{
+			color: white;
+			text-decoration: none;
+		}
+		.modal-btn-text:hover{
+			text-decoration: none;
+			color: white;
+		}
+		.modal-btn:hover{
+			border-color: var(--aqua-light);
+		}
+		.pick-new{
+			font-size: 30px;
+			animation: glowing 1s ease-in-out infinite alternate;
+
+		}
+		.pick-new:hover{
+			text-decoration: none;
+		}
+
+
+		/*Glowing animation kewframes css*/
+	    @-webkit-keyframes glowing {
+		  from {
+		    text-shadow: 
+			    0 0 1px #fff, 
+			    0 0 2px #fff, 
+			    0 0 3px #f0f, 
+			    0 0 4px #0ff, 
+			    0 0 5px var(--aqua-dark), 
+			    0 0 6px var(--aqua-dark), 
+			    0 0 7px var(--aqua-dark);
+		  }
+
+		  to {
+		    text-shadow: 
+		    	0 0 1px #fff, 
+		    	0 0 2px var(--aqua-light), 
+		    	0 0 3px var(--aqua-light), 
+		    	0 0 4px var(--aqua-light), 
+		    	0 0 5px var(--aqua-light), 
+		    	0 0 6px var(--aqua-light), 
+		    	0 0 7px var(--aqua-light);
+		  }
+		}
+
+
+		
+
+
+     	
+    </style>
+       
+    </head>
+ 	<body>
+ 		<nav>
+			<a href="../index.html"><h2>BC FOODS</h2></a>
+			<div class="icons">
+				<i class="fa-solid fa-user" type="button"></i>
+				<div class="dropdown" uk-dropdown ">
+					<p>John Oliver</p>
+					<hr>
+					<!--Logout user and go to sign in page when clicked-->
+					<a class="logout" href="../sign-up-pages/sign-in.html">Logout</a>
+				</div>
+				<!--badge to show how many items are in cart ready for checkout-->
+				<!--When user adds item to cart it will show up-->
+				<a href="#"><i class="fa-solid fa-cart-shopping"><span class="uk-badge">0</span></i></a>	
+			</div>
+		</nav>
+		<main>
+			<h1 class="page-header-text">Your Selected<span> Item!</span></h1>
+			<div class="product-area">
+				<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+				    <div class="uk-card-media-left uk-cover-container">
+				        <img src="../images/burger.jpg" alt="product-image" uk-cover>
+				        <canvas width="600" height="400"></canvas>
+				    </div>
+				    <div>
+				        <div class="uk-card-body">
+				            <h3>Big Boy Burger</h3>
+				            <p>$20.000</p>
+				            <p class="Item description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				            </p>
+				            <hr class="uk-divider-icon">
+				            <div class="input-confirm-area">
+				            	<div>
+				            		<label for="quantity">Quantity:(max 5)</label>
+				            		<input type="number" name="quantity" class="quantity" placeholder="1" min="1" max="5">
+				            	</div>
+				            	<button class="confirm-btn"  uk-toggle="target: #modal">Proceed to checkout</button>
+				            	<!-- This is the modal with the default close button -->
+								<div id="modal" uk-modal>
+								    <div class="uk-modal-dialog uk-modal-body">
+								        <h2 class="uk-modal-title">Thank you for Placing an order with BC FOODS. Your order is on its way</h2>
+								        <p class="uk-text-right">
+							            	<button class="uk-button uk-button-default modal-btn" type="button"><a href="../index.html" class="modal-btn-text">CLOSE</a></button>
+							        	</p>
+															       
+								    </div>
+								</div>
+
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+
+			<section class="change-order">
+				<h1 class="page-header-text">Changed your <span>Mind?</span></h1>
+				<a href="../index.html" class="pick-new"><p style="text-align:center; color: white">Pick something else.</p></a>
+				<div class="other-options">
+					
+				</div>
+				
+			</section>
+		</main>
+
+		<footer>
+		<p class="copyright-text">Copyright &copy; 2012 All Rights Reserved by<a href="#"> BC Foods</a></p>	
+		</footer>
+			
+
+      
+
+    </body>
+</html>
