@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adim Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--CSS LINKING-->
+  <link rel="stylesheet" href="../css/styles.css"/>
+  
+   <!-- Icons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+  <!--LINKING FONT AWESOME-->
+  <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
+
+
+
+  
+
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;    
+    }
+    
+    body{
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+  }
+
+    
+  </style>
+</head>
+
+<body>
+   <div class="sidebar">
+     <div class="logo_content">
+       <div class="logo">
+         <div class="logo_name">BC FOODS</div>
+       </div>
+       <i class='bx bx-menu' id="btn"></i>
+
+     </div>
+     <ul class="nav_list">
+       <li>
+        <a href="#" class="tablinks" onclick="openItem(event, 'Dashboard')" id="defaultOpen">
+         <i class='bx bx-grid-alt'></i>
+         <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+       <li>
+         <a href="#" class="tablinks" onclick="openItem(event, 'Orders')">
+         <i class='bx bx-cart-alt'></i>
+          <span class="links_name">Orders</span>
+         </a>
+         <span class="tooltip">Orders</span>
+       </li>
+       <li>
+        <a href="#" class="tablinks" onclick="openItem(event, 'CustomerList')">
+         <i class='bx bx-list-ul' ></i>
+         <span class="links_name">Customer List</span>
+        </a>
+        <span class="tooltip">Customer List</span>
+      </li>
+      <li>
+        <a href="#" class="tablinks" onclick="openItem(event, 'AddMenuItem')">
+         <i class='bx bx-food-menu' ></i>
+         <span class="links_name">Add Menu Item</span>
+        </a>
+        <span class="tooltip">Add Menu Item</span>
+      </li>
+      
+     </ul>
+     <div class="content">
+       <div class="user">
+         <div class="user_details">
+           <img src="https://th.bing.com/th/id/OIP.dYoOTJdgZr1QI6gO7zTBGAHaLH?pid=ImgDet&rs=1" alt="">
+           <div class="name_job">
+             <div class="name">Sky Mathews</div>
+             
+           </div>
+         </div>
+          <a href="../sign-up-pages/sign-in.html" class="logout"><i class='bx bx-log-out' id="log_out"></i></a>
+          
+       </div>
+     </div>
+
+     
+   </div>
+   <div class="home_content">
+    <nav class="admin-navigation">
+      <div class="nav-items">
+        <p style="font-size: 25px;margin-right: 10px;">Welcome back Admin</p>
+        <i class='bx bx-bell'><span></span></i>
+      </div>
+
+
+      
+    </nav>
+    <!-- Tab content -->
+    <div class="main-content">
+      <div id="Dashboard" class="tabcontent">
+        <p class="section-header">Dashboard</p>
+        <div class="overview-cards">
+
+          <div class="card ">
+            <div class="left">
+              <div class="number">5</div>
+              <div class="text">Total Menu Items</div>
+            </div>
+            <div class="right">
+              <i class="fa-solid fa-burger"></i>
+            </div>
+          </div>
+
+          <div class="card ">
+            <div class="left">
+              <div class="number">$ 200,000</div>
+              <div class="text">Total Revenue</div>
+            </div>
+            <div class="right">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+            
+          </div>
+          <div class="card ">
+            <div class="left">
+              <div class="number">5,560</div>
+              <div class="text">Total Orders</div>
+            </div>
+            <div class="right">
+              <i class='bx bxs-food-menu' ></i>
+            </div>
+            
+          </div>
+          <div class="card ">
+            <div class="left">
+              <div class="number">550</div>
+              <div class="text">Total Customers</div>
+            </div>
+            <div class="right">
+             <i class="fa-solid fa-user"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="summary-section">
+          <div class="order-summary">
+            <h3>Orders Summary</h3>
+            <div class="order-tab">
+              <button  class="order-tablinks" onclick="openSummary(event, 'Today')" id="default">Today</button>
+              <button class="order-links" onclick="openSummary(event, 'Weekly')">Weekly</button>
+              <button class="order-links" onclick="openSummary(event, 'Monthly')">Monthly</button>
+            </div>
+            <div id="Today" class="order-tabcontent">
+            <div class="info">
+              <div>
+                <p>Most Bought Item</p>
+                <p>Big boy burger</p>
+              </div>
+              <div>
+                <p>Revenue</p>
+                <p>$500</p>
+              </div>
+              <div>
+                <p>Most Bought Item</p>
+                <p>Big boy burger</p>
+              </div>
+
+              
+            </div> 
+            </div>
+
+            <div id="Weekly" class="order-tabcontent">
+              <h3>Paris</h3>
+              <p>Paris is the capital of France.</p> 
+            </div>
+
+            <div id="Monthly" class="order-tabcontent">
+              <h3>Tokyo</h3>
+              <p>Tokyo is the capital of Japan.</p>
+            </div>
+            
+
+         
+            
+          </div>
+          <div class="Revenue-summary">
+            <h3>Revenue Summary</h3>
+
+            
+          </div>
+        </div> 
+      </div>
+
+      <div id="Orders" class="tabcontent">
+        <h3>Orders</h3>
+      </div>
+
+      <div id="CustomerList" class="tabcontent">
+        <h3>CustomerList</h3>
+        
+      </div>
+      <div id="AddMenuItem" class="tabcontent">
+        <h3>AddMenuItem</h3>
+      </div>
+    </div>
+
+    
+   </div>
+   
+    
+  
+ 
+<script src="../js/index.js" ></script>
+
+ 
+  
+</script>
+
+</body>
+</html>

@@ -31,6 +31,10 @@ body{
 	
 	
 }
+h1,h2,h3,p,a{
+	    	font-family: 'Playfair Display', serif;
+
+	    }
 nav {
 	background-color: none;
 	 position: fixed;
@@ -217,7 +221,7 @@ hr{
 			<a href="#"><h2>BC FOODS</h2></a>
 			<div class="icons">
 				<i class="fa-solid fa-user" type="button"></i>
-				<div class="dropdown" uk-dropdown ">
+				<div class="dropdown" uk-dropdown >
 					<p>John Oliver</p>
 					<hr>
 					<!--Logout user and go to sign in page when clicked-->
@@ -240,11 +244,11 @@ hr{
 		<section class="menu-section" id="menu">
 			<h1 >Pick and place your <span style="color: var(--aqua-dark);">order!</span></h1>
 			<div class="tabs">
-				<button class="tablinks active" onclick="openitem(event, 'Pizza')">Pizza</button>
+				<button class="tablinks active" onclick="openItem(event, 'Pizza')">Pizza</button>
 				<span>|</span>
-	  			<button class="tablinks" onclick="openitem(event, 'Burgers')">Burgers</button>
+	  			<button class="tablinks" onclick="openItem(event, 'Burgers')">Burgers</button>
 	  			<span>|</span>
-	  			<button class="tablinks" onclick="openitem(event, 'Meat')">Steak</button>
+	  			<button class="tablinks" onclick="openItem(event, 'Meat')">Steak</button>
 			</div>
 
 			<!--TAB MENU ITEMS TO BE DISPLAYED WHEN A MENU TAB IS CLICKED-->

@@ -21,6 +21,10 @@
 		body{
 			background:#363737; 		
 		}
+		h1,h2,h3,p,a{
+	    	font-family: 'Playfair Display', serif;
+
+	    }
 		.sign-in-card{
 			position: absolute;
 			left: 50%;
@@ -108,9 +112,9 @@
 	<div class="sign-in-container">
 		<div class="sign-in-card">
 			<h4>SIGN IN!</h4>
-			<form>
-				<input type="email" name="email" placeholder="Email" required>
-				<input type="password" name="password"  placeholder="Password"required="">
+			<form name="sign-in-form" method="post" onsubmit="return validateSignIn()">
+				<input type="email" name="email" placeholder="Email" required id="sign-in_email">
+				<input type="password" name="password"  placeholder="Password" id="sign-in_password" required="">
 				<div>
 					<input type="checkbox" id="remember" name="remember" value="remember">
 					<label for="remember">Remember Me</label>
