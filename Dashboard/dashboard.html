@@ -11,6 +11,9 @@
    <!-- Icons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+    <!--jQuery fancyTable plugin.-->
+    
+
     <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
   <!--LINKING FONT AWESOME-->
   <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
@@ -49,14 +52,14 @@
      </div>
      <ul class="nav_list">
        <li>
-        <a href="#" class="tablinks" onclick="openItem(event, 'Dashboard')" id="defaultOpen">
+        <a href="#" class="tablinks" onclick="openItem(event, 'Dashboard')" >
          <i class='bx bx-grid-alt'></i>
          <span class="links_name">Dashboard</span>
         </a>
         <span class="tooltip">Dashboard</span>
       </li>
        <li>
-         <a href="#" class="tablinks" onclick="openItem(event, 'Orders')">
+         <a href="#" class="tablinks" onclick="openItem(event, 'Orders')" id="defaultOpen">
          <i class='bx bx-cart-alt'></i>
           <span class="links_name">Orders</span>
          </a>
@@ -156,63 +159,192 @@
           <div class="order-summary">
             <h3>Orders Summary</h3>
             <div class="order-tab">
-              <button  class="order-tablinks" onclick="openSummary(event, 'Today')" id="default">Today</button>
+              <button  class="order-links " onclick="openSummary(event, 'Today')" id="default">Today</button>
               <button class="order-links" onclick="openSummary(event, 'Weekly')">Weekly</button>
               <button class="order-links" onclick="openSummary(event, 'Monthly')">Monthly</button>
             </div>
             <div id="Today" class="order-tabcontent">
-            <div class="info">
-              <div>
-                <p>Most Bought Item</p>
-                <p>Big boy burger</p>
-              </div>
-              <div>
-                <p>Revenue</p>
-                <p>$500</p>
-              </div>
-              <div>
-                <p>Most Bought Item</p>
-                <p>Big boy burger</p>
-              </div>
-
-              
-            </div> 
+              <div class="info">
+                <div>
+                  <p>250</p>
+                  <p>Deliverd Orders</p>
+                  
+                </div>
+                <div>
+                  <p>Piza deluxe</p>
+                  <p>Top Item</p>
+                  
+                </div>
+                <div>
+                  <p>$5000</p>
+                  <p>Revenue</p>
+                  
+                </div> 
+              </div> 
             </div>
 
             <div id="Weekly" class="order-tabcontent">
-              <h3>Paris</h3>
-              <p>Paris is the capital of France.</p> 
+              <div class="info">
+                <div>
+                  <p>650</p>
+                  <p>Deliverd Orders</p>
+                  
+                </div>
+                <div>
+                  <p>Steak</p>
+                  <p>Top Item</p>
+                  
+                </div>
+                <div>
+                  <p>$25000</p>
+                  <p>Revenue</p>
+                  
+                </div> 
+            </div> 
             </div>
 
             <div id="Monthly" class="order-tabcontent">
-              <h3>Tokyo</h3>
-              <p>Tokyo is the capital of Japan.</p>
+              <div class="info">
+                <div>
+                  <p>1500</p>
+                  <p>Deliverd Orders</p> 
+                </div>
+                <div>
+                  <p>Piza deluxe</p>
+                  <p>Top Item</p>
+                </div>
+                <div>
+                  <p>$35000</p>
+                  <p>Revenue</p>
+                </div> 
+              </div> 
             </div>
-            
-
-         
-            
           </div>
-          <div class="Revenue-summary">
-            <h3>Revenue Summary</h3>
 
+          <div class="alerts-section">
+            <h3>Alerts</h3>
+
+            <div class="alert-card">
+              <div class="bullet">
+              </div>
+              <div>
+                <p class="customer-name"> John Stuart <span>Placed an order</span></p>
+              <p class="location">Mbabane</p>
+              </div>
+              <p>02 October 2022</p>
+            </div>
+            <hr>
+
+            <div class="alert-card">
+              <div class="bullet">
+              </div>
+              <div>
+                <p class="customer-name"> Mary sue <span>Placed an order</span></p>
+              <p class="location">Manzini</p>
+              </div>
+              <p>05 October 2022</p>
+            </div>
+            <hr>
             
           </div>
         </div> 
+       
+   
+
       </div>
 
       <div id="Orders" class="tabcontent">
-        <h3>Orders</h3>
+        <h3 class="section-header">Orders</h3>
+        
+        <form class="search-input">
+          <input type="text" id="searchInput" onkeyup="searchOrdersTable()" placeholder="Search for Order ID" title="Type in a id">
+          
+
+        </form>
+        
+        <div style="overflow-x:auto;">
+          <table id="OrdersTable" data-pagecount="1">
+            <tr class="header">
+              <th >Order ID</th>
+              <th>Product ID</th>
+              <th >Date</th>
+              <th >Customer Name</th>
+              <th >Location</th>
+              <th >Qauntity</th>
+              <th >Status</th>
+            </tr>
+
+            <tr>
+              <td>#202012</td>
+              <td>#B00234</td>
+              <td>02-10-2022</td>
+              <td>John Stuart</td>
+              <td>Mbabane</td>
+              <td>2</td>
+              <td class="status">not Deliverd</td>
+            </tr>
+            <tr>
+              <td>#202012</td>
+              <td>#B00234</td>
+              <td>02-10-2022</td>
+              <td>John Stuart</td>
+              <td>Mbabane</td>
+              <td>2</td>
+              <td class="status">Deliverd</td>
+            </tr>
+
+          </table>
+        </div>
+
+
       </div>
 
       <div id="CustomerList" class="tabcontent">
-        <h3>CustomerList</h3>
+        <h3 class="section-header">CustomerList</h3>
+        <form class="search-input">
+          <input type="text" id="searchInputCustomers" onkeyup="searchCustomersTable()" placeholder="Search for customer name" title="Type in a name">
+
+        </form>
+        
+
+        <div style="overflow-x:auto;">
+          <table id="CustomerTable">
+            <tr class="header">
+              <th >ID</th>
+              <th>First Name</th>
+              <th >Last Name</th>
+              <th >Email</th>
+              <th >Gender</th>
+              <th style="background: none;"></th>
+            </tr>
+
+            <tr>
+              <td>98344255388</td>
+              <td>John</td>
+              <td>Stuart</td>
+              <td>dragons@gmail.com</td>
+              <td>M</td>
+              <td class="delete-row"><i class='bx bx-trash'></i></td>
+            </tr>
+            <tr>
+              <td>98344255388</td>
+              <td>missy</td>
+              <td>Smith</td>
+              <td>birds@gmail.com</td>
+              <td>F</td>
+              <td class="delete-row"><i class='bx bx-trash'></i></td>
+            </tr>
+          </table>
+        </div>
+
+
         
       </div>
       <div id="AddMenuItem" class="tabcontent">
-        <h3>AddMenuItem</h3>
+        <h3 class="section-header">AddMenuItem</h3>
       </div>
     </div>
+  </div>
 
     
    </div>
