@@ -88,9 +88,19 @@ const searchCustomersTable = () => {
 }
 
 
+//CHECKOUT JS//
 
+//////////////////////////////////////////UPLOAD IMAGE END/////////////////////////////////
+    const showPreview = (event) => {
+        if (event.target.files.length > 0) {
+            let src = URL.createObjectURL(event.target.files[0]);
+            let preview = document.getElementById("file-ip-1-preview");
+            console.log(src);
+            preview.src = src;
+            preview.style.display = "block";
+        }
+    }
 
+    //////////////////////////////////////////UPLOAD IMAGE END/////////////////////////////////
 
-
-
-
+//Table pagination

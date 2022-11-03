@@ -52,14 +52,14 @@
      </div>
      <ul class="nav_list">
        <li>
-        <a href="#" class="tablinks" onclick="openItem(event, 'Dashboard')" >
+        <a href="#" class="tablinks" onclick="openItem(event, 'Dashboard')" id="defaultOpen" >
          <i class='bx bx-grid-alt'></i>
          <span class="links_name">Dashboard</span>
         </a>
         <span class="tooltip">Dashboard</span>
       </li>
        <li>
-         <a href="#" class="tablinks" onclick="openItem(event, 'Orders')" id="defaultOpen">
+         <a href="#" class="tablinks" onclick="openItem(event, 'Orders')">
          <i class='bx bx-cart-alt'></i>
           <span class="links_name">Orders</span>
          </a>
@@ -84,11 +84,8 @@
      <div class="content">
        <div class="user">
          <div class="user_details">
-           <img src="https://th.bing.com/th/id/OIP.dYoOTJdgZr1QI6gO7zTBGAHaLH?pid=ImgDet&rs=1" alt="">
-           <div class="name_job">
+          <!--ADMIN NAME-->
              <div class="name">Sky Mathews</div>
-             
-           </div>
          </div>
           <a href="../sign-up-pages/sign-in.html" class="logout"><i class='bx bx-log-out' id="log_out"></i></a>
           
@@ -101,13 +98,15 @@
     <nav class="admin-navigation">
       <div class="nav-items">
         <p style="font-size: 25px;margin-right: 10px;">Welcome back Admin</p>
-        <i class='bx bx-bell'><span></span></i>
+        
       </div>
 
 
       
     </nav>
     <!-- Tab content -->
+
+    <!--DASHBOARD TAB CONTENT-->
     <div class="main-content">
       <div id="Dashboard" class="tabcontent">
         <p class="section-header">Dashboard</p>
@@ -163,6 +162,8 @@
               <button class="order-links" onclick="openSummary(event, 'Weekly')">Weekly</button>
               <button class="order-links" onclick="openSummary(event, 'Monthly')">Monthly</button>
             </div>
+
+            <!--SUMMARY TAB CONTENTS-->
             <div id="Today" class="order-tabcontent">
               <div class="info">
                 <div>
@@ -220,6 +221,7 @@
               </div> 
             </div>
           </div>
+          <!---->
 
           <div class="alerts-section">
             <h3>Alerts</h3>
@@ -245,6 +247,16 @@
               <p>05 October 2022</p>
             </div>
             <hr>
+
+            <div class="alert-card">
+              <div class="bullet">
+              </div>
+              <div>
+                <p class="customer-name"> Mary sue <span>Placed an order</span></p>
+              <p class="location">Manzini</p>
+              </div>
+              <p>05 October 2022</p>
+            </div>
             
           </div>
         </div> 
@@ -252,18 +264,16 @@
    
 
       </div>
-
+      <!--ORDERS TAB CONTENT-->
       <div id="Orders" class="tabcontent">
         <h3 class="section-header">Orders</h3>
-        
-        <form class="search-input">
-          <input type="text" id="searchInput" onkeyup="searchOrdersTable()" placeholder="Search for Order ID" title="Type in a id">
-          
 
+        <form class="search-input">
+          <input type="text" id="searchInput" onkeyup="searchOrdersTable()" placeholder="Search Order ID" title="Type in a id">
         </form>
         
         <div style="overflow-x:auto;">
-          <table id="OrdersTable" data-pagecount="1">
+          <table id="OrdersTable" >
             <tr class="header">
               <th >Order ID</th>
               <th>Product ID</th>
@@ -273,15 +283,15 @@
               <th >Qauntity</th>
               <th >Status</th>
             </tr>
-
-            <tr>
+            <tbody>
+              <tr>
               <td>#202012</td>
               <td>#B00234</td>
               <td>02-10-2022</td>
               <td>John Stuart</td>
               <td>Mbabane</td>
               <td>2</td>
-              <td class="status">not Deliverd</td>
+              <td class="status-delivered">Delivered</td>
             </tr>
             <tr>
               <td>#202012</td>
@@ -290,15 +300,19 @@
               <td>John Stuart</td>
               <td>Mbabane</td>
               <td>2</td>
-              <td class="status">Deliverd</td>
+              <td class="status-pending">On-Delivery</td>
             </tr>
-
+            </tbody>
           </table>
         </div>
+          
+         
+        
 
 
       </div>
 
+      <!--CUSTOMER LIST TAB CONTENT-->
       <div id="CustomerList" class="tabcontent">
         <h3 class="section-header">CustomerList</h3>
         <form class="search-input">
@@ -340,8 +354,45 @@
 
         
       </div>
+      <!--ADD MENU ITEM TAB CONTENT-->
       <div id="AddMenuItem" class="tabcontent">
         <h3 class="section-header">AddMenuItem</h3>
+          <form class="add-item-form">
+            <div class="left">
+              <p class="label">Item Name:</p>
+              <input type="text" name="item-name" placeholder="Item Name" required>
+              <p class="label">Choose category:</p>
+              <select name="category" id="category">
+                <option value="Burger">Burger</option>
+                <option value="Pizza">Pizza</option>
+                <option value="Meat">Meat</option>
+              </select>
+               <p class="label">Ingredients:</p>
+               <textarea id="ingredients" name="ingredients" maxlength="250" rows="5">
+              </textarea>
+              <p class="label">Price:</p>
+              <input type="number" name="price" min="10" max="100" ondrop="return false;" onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57" required>
+            </div>
+            <div class="right">
+              
+               <div class="upload-image">
+                  <div class="center">
+                    <div class="form-input">
+                      <div class="preview">
+                          <img id="file-ip-1-preview">
+                      </div>
+                      <label for="file-ip-1">Upload Image</label>
+                      <input type="file" id="file-ip-1" accept="image/*" name="image" onchange="showPreview(event);">
+                    </div>
+                  </div>
+                </div>
+            </div>
+           
+          </form>
+
+      
+
+
       </div>
     </div>
   </div>

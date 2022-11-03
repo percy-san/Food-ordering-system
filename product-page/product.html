@@ -122,25 +122,7 @@
 		.change-order{
 			margin-top: 1in;
 		}
-		.uk-modal-dialog {
-			background-color: var(--card-gray);
-
-		}
-		.uk-modal-title{
-			color: white;
-		}
-
-		.modal-btn-text{
-			color: white;
-			text-decoration: none;
-		}
-		.modal-btn-text:hover{
-			text-decoration: none;
-			color: white;
-		}
-		.modal-btn:hover{
-			border-color: var(--aqua-light);
-		}
+		
 		.pick-new{
 			font-size: 30px;
 			animation: glowing 1s ease-in-out infinite alternate;
@@ -189,7 +171,7 @@
 			<a href="../index.html"><h2>BC FOODS</h2></a>
 			<div class="icons">
 				<i class="fa-solid fa-user" type="button"></i>
-				<div class="dropdown" uk-dropdown ">
+				<div class="dropdown" uk-dropdown >
 					<p>John Oliver</p>
 					<hr>
 					<!--Logout user and go to sign in page when clicked-->
@@ -217,21 +199,8 @@
 				            </p>
 				            <hr class="uk-divider-icon">
 				            <div class="input-confirm-area">
-				            	<div>
-				            		<label for="quantity">Quantity:(max 5)</label>
-				            		<input type="number" name="quantity" class="quantity" placeholder="1" min="1" max="5">
-				            	</div>
-				            	<button class="confirm-btn"  uk-toggle="target: #modal">Proceed to checkout</button>
-				            	<!-- This is the modal with the default close button -->
-								<div id="modal" uk-modal>
-								    <div class="uk-modal-dialog uk-modal-body">
-								        <h2 class="uk-modal-title">Thank you for Placing an order with BC FOODS. Your order is on its way</h2>
-								        <p class="uk-text-right">
-							            	<button class="uk-button uk-button-default modal-btn" type="button"><a href="../index.html" class="modal-btn-text">CLOSE</a></button>
-							        	</p>
-															       
-								    </div>
-								</div>
+				            	<a href="../checkout/checkout.html"><button class="confirm-btn">Proceed to checkout</button></a>
+				            	
 
 				            </div>
 				        </div>
