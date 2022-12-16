@@ -1,8 +1,5 @@
 
-//FORM VALIDATION//
-const validateSignIn = () =>{
-  
-}
+
 
 //TAB FUNCTIONALITY//
 const openItem = (evt, tabItem) => {
@@ -104,3 +101,4 @@ const searchCustomersTable = () => {
     //////////////////////////////////////////UPLOAD IMAGE END/////////////////////////////////
 
 //Table pagination
+

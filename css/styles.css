@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
 :root{
 	--background-gray:#363737;
 	--card-gray:#121212;
@@ -11,7 +11,7 @@
     --light-black:#1d1b31;
 
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
 
 *,button{
 	font-family: 'Playfair Display', serif;
@@ -32,6 +32,10 @@ nav{
 
 }
 nav a{
+	text-decoration: none;
+
+}
+nav a:hover{
 	text-decoration: none;
 }
 nav .icons i{
@@ -62,11 +66,12 @@ nav .icons a{
 	text-transform: uppercase;
 	font-weight: bold;
 }
-.dropdown .logout{
+.dropdown .logout, .dropdown .Order-history{
 	color: black;
 	text-decoration:none; 
+	transition: 0.2s ease-in;
 }
-.dropdown .logout:hover{
+.dropdown .logout:hover, .dropdown .Order-history:hover{
 	color: var(--aqua-light);
 }
 
@@ -566,15 +571,13 @@ footer{
 .summary-section{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
 	margin-top: 50px;
 	gap: 20px;
 	
 	
 }
-.order-summary{
-	height: 200px;
-}
-.order-summary, .alerts-section{
+.order-summary, .alerts, .product-list{
 	border-radius: 10px;
 	padding: 15px;
 	color: white;
@@ -585,12 +588,11 @@ footer{
 	-moz-box-shadow: -1px 17px 19px -5px rgba(0,0,0,0.75);
 }
 
-.order-summary h3, .alerts-section h3{
+.order-summary h3, .alerts h3, .product-list h3{
 	font-size: 30px;
 	margin-bottom: 10px;
 }
 .order-tab{
-	
 	margin-bottom: 20px;
 }
 .order-links{
@@ -607,8 +609,6 @@ footer{
 	color: var(--aqua-dark);
 	border-bottom: 2px solid var(--aqua-dark);
 }
-
-
 
 
 .info{
@@ -628,7 +628,7 @@ footer{
 	font-size: 18px;
 }
 
-.alerts-section{
+.alerts{
 	height: 250px;
 	overflow-y: auto;
 }
@@ -655,6 +655,30 @@ footer{
 .alert-card .location{
 	color: var(--offset-gray);
 }
+
+.product-list{
+	overflow-y: auto;
+	height: 15rem;
+}
+.product-list ul li{
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	padding: 10px 5px 20px 0;
+}
+.product-del{
+	background: transparent;
+	border: none;
+	color: white;
+	font-size: 25px;
+	transition: 0.2s ease-in;
+	cursor: pointer;
+}
+.product-del:hover{
+	color: red;
+
+}
+
 
 /*Orders admin css*/
 .search-input{
@@ -846,7 +870,7 @@ tr:nth-child(even) {
   to {opacity: 1;}
 }
 
-/* On screens that are 600px or less, set the background color to olive */
+
 @media screen and (max-width: 900px) {
   .overview-cards,.summary-section,.add-item-form{
   	display: flex;

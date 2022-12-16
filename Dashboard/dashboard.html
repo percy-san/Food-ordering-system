@@ -12,9 +12,6 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
     <!--jQuery fancyTable plugin.-->
-    
-
-    <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
   <!--LINKING FONT AWESOME-->
   <script src="https://kit.fontawesome.com/f946154abe.js" crossorigin="anonymous"></script>
 
@@ -42,7 +39,7 @@
 </head>
 
 <body>
-   <div class="sidebar">
+  <div class="sidebar">
      <div class="logo_content">
        <div class="logo">
          <div class="logo_name">BC FOODS</div>
@@ -74,7 +71,7 @@
       </li>
       <li>
         <a href="#" class="tablinks" onclick="openItem(event, 'AddMenuItem')">
-         <i class='bx bx-food-menu' ></i>
+         <i class='bx bx-plus-circle'></i>
          <span class="links_name">Add Menu Item</span>
         </a>
         <span class="tooltip">Add Menu Item</span>
@@ -90,19 +87,15 @@
           <a href="../sign-up-pages/sign-in.html" class="logout"><i class='bx bx-log-out' id="log_out"></i></a>
           
        </div>
-     </div>
+     </div>   
+  </div>
 
-     
-   </div>
-   <div class="home_content">
+
+  <div class="home_content">
     <nav class="admin-navigation">
       <div class="nav-items">
-        <p style="font-size: 25px;margin-right: 10px;">Welcome back Admin</p>
-        
+        <p style="font-size: 25px;margin-right: 10px;">Welcome back Admin</p> 
       </div>
-
-
-      
     </nav>
     <!-- Tab content -->
 
@@ -151,7 +144,6 @@
              <i class="fa-solid fa-user"></i>
             </div>
           </div>
-
         </div>
 
         <div class="summary-section">
@@ -221,11 +213,10 @@
               </div> 
             </div>
           </div>
-          <!---->
 
-          <div class="alerts-section">
+          <!--ALERTS-->
+          <div class="alerts">
             <h3>Alerts</h3>
-
             <div class="alert-card">
               <div class="bullet">
               </div>
@@ -256,14 +247,37 @@
               <p class="location">Manzini</p>
               </div>
               <p>05 October 2022</p>
-            </div>
+            </div> 
+          </div>
+          <!--Product List-->
+          <div class="product-list">
+            <h3>Product List</h3>
+            <ul>
+              <li>
+                <p>Crunch Burger</p>
+                <button class="product-del"><i class='bx bx-trash'></i></button>
+              </li>
+              <hr>
+              <li>
+                <p>Crunch Pizza</p>
+                <button  class="product-del"><i class='bx bx-trash'></i></button>
+              </li>
+              <hr>
+              <li>
+                <p>Crunch Pizza</p>
+                <button  class="product-del"><i class='bx bx-trash'></i></button>
+              </li>
+              
+
+
+              
+            </ul>
             
           </div>
-        </div> 
-       
-   
 
+        </div> 
       </div>
+
       <!--ORDERS TAB CONTENT-->
       <div id="Orders" class="tabcontent">
         <h3 class="section-header">Orders</h3>
@@ -305,11 +319,6 @@
             </tbody>
           </table>
         </div>
-          
-         
-        
-
-
       </div>
 
       <!--CUSTOMER LIST TAB CONTENT-->
@@ -350,10 +359,8 @@
             </tr>
           </table>
         </div>
-
-
-        
       </div>
+
       <!--ADD MENU ITEM TAB CONTENT-->
       <div id="AddMenuItem" class="tabcontent">
         <h3 class="section-header">AddMenuItem</h3>
@@ -389,11 +396,9 @@
             </div>
            
           </form>
-
-      
-
-
       </div>
+
+
     </div>
   </div>
 
